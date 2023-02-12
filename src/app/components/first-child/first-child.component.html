@@ -2,6 +2,11 @@
 <!--Варианты биндингов-->
 <!-- <input readonly="true" type="text" [value]="name" /> -->
 <!-- <p [textContent]="name"></p> -->
+<p #userName>{{name}}</p>
+<div>
+    <p>Имя пользователя: {{userName}}</p>
+    <p>Возраст пользователя: {{userAge}}</p> 
+</div>
 <div>
     <p>Количество кликов {{count}}</p>
     <button (click)="increase($event)">Click</button>
@@ -11,5 +16,4 @@
     <input type="text" [(ngModel)]="name" />
 </div>
 
-<h2>Подзаголовок from html</h2>
-<p>Angular 15 представляет модульную архитектуру приложения</p>
+<input [ngModel]="userName" (ngModelChange)="onNameChange($event)">

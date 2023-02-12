@@ -1,3 +1,5 @@
+<input [ngModel]="userName" (ngModelChange)="onNameChange($event)"/>
+
 <div>
     <div id="div2" [class.isyellowbox]="isYellow"></div>
     <div id="div2" [class.isbluebox]="!isYellow"></div>
@@ -9,16 +11,8 @@
     <div id="div2" [style.backgroundColor]="!isYellow2? 'blue' : 'yellow'"></div>
     <input type="checkbox" [(ngModel)]="isYellow2" />
 </div>
-<!-- <table border="1">
-    <tr>
-        <td [ .colspan]="colspan">One-Two</td>
-    </tr>
-    <tr>
-        <td>Three</td>
-        <td>Four</td>
-    </tr>
-    <tr>
-        <td>Five</td>
-        <td>Six</td>
-    </tr>
-</table> -->
+
+<div>
+    <button (click)="change(true)">+</button>
+    <button (click)="change(false)">-</button>
+</div>
