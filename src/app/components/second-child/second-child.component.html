@@ -1,18 +1,28 @@
-<input [ngModel]="userName" (ngModelChange)="onNameChange($event)"/>
-
+<!-- <input [ngModel]="userName" (ngModelChange)="onNameChange($event)"/>
+ -->
 <div>
     <div id="div2" [class.isyellowbox]="isYellow"></div>
     <div id="div2" [class.isbluebox]="!isYellow"></div>
-    <input type="checkbox" [(ngModel)]="isYellow" />
-</div>
+<!--     <input type="checkbox" [(ngModel)]="isYellow" />
+ --></div>
 
 <div>
     <div id="div2" [style.backgroundColor]="isYellow2? 'blue' : 'yellow'"></div>
     <div id="div2" [style.backgroundColor]="!isYellow2? 'blue' : 'yellow'"></div>
-    <input type="checkbox" [(ngModel)]="isYellow2" />
-</div>
+<!--     <input type="checkbox" [(ngModel)]="isYellow2" />
+ --></div>
 
 <div>
     <button (click)="change(true)">+</button>
     <button (click)="change(false)">-</button>
+</div>
+
+<div>
+    <p #userName>{{localName}}</p>
+    <p>{{userName.textContent}}</p>
+<!--     <input type="text" [(ngModel)]="localName" />
+ --></div>
+
+<div>
+    <p>Голосующие за:{{counter}}</p>
 </div>

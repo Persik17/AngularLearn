@@ -8,12 +8,19 @@
     <p>Возраст пользователя: {{userAge}}</p> 
 </div>
 <div>
-    <p>Количество кликов {{count}}</p>
+    <p>Произошло событий в этот момент: {{count}}</p>
     <button (click)="increase($event)">Click</button>
 </div>
 <div>
     <input type="text" value="{{name}}" /> <br><br>
-    <input type="text" [(ngModel)]="name" />
+<!--     <input type="text" [(ngModel)]="name" />
+ --></div>
+
+<!-- <input [ngModel]="userName" (ngModelChange)="onNameChange($event)">
+ -->
+<div>
+    <ng-content></ng-content>
+    <button (click)="change()">Изменить</button>
 </div>
 
-<input [ngModel]="userName" (ngModelChange)="onNameChange($event)">
+

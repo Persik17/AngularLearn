@@ -6,6 +6,12 @@ import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange
     styleUrls: ['./second-child.component.css'] 
 })
 export class SecondChildComponent { 
+    counter: number = 0;
+    increment() { this.counter++; }
+    decrement() { this.counter--; }
+
+    localName:string = "my local mame here";
+
     isYellow = false;
     isYellow2 = false;
 

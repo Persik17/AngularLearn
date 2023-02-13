@@ -1,9 +1,30 @@
-<first-child-comp [userName]="name" [userAge]="age"></first-child-comp>
-<div>
-    <input type="text" [(ngModel)]="name" />
-    <input type="number" [(ngModel)]="age" />
-</div>
+<table>
+    <td>
+        <first-child-comp [userName]="name" [userAge]="age">
+            <h3 #headerContent>Добро пожаловать {{name}}!</h3>
+        </first-child-comp>
+        <!-- <div>
+            <input type="text" [(ngModel)]="name" />
+            <input type="number" [(ngModel)]="age" />
+        </div> -->
+        <div>
+            <h1>AppModule</h1>
+            <data-comp></data-comp>
+       </div>
+    </td>
+    <td>
+        <h2>Количество кликов: {{clicks}}</h2>
+        <second-child-comp [(userName)]="name"></second-child-comp>
+        <div>
+            <button (click)="increment()">+</button>
+            <button (click)="decrement()">-</button>
+        </div>
+        <div>Выбранное имя: {{name}}</div>
 
-<h2>Количество кликов: {{clicks}}</h2>
-<second-child-comp [(userName)]="name"></second-child-comp>
-<div>Выбранное имя: {{name}}</div>  
+        <div style="height: 25px;">
+            <p #nameText>{{name}}</p>
+            <p>{{nameText.textContent}}</p>
+            <button (click)="change()">Изменить</button>
+        </div>
+    </td>
+</table>
